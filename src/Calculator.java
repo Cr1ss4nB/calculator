@@ -10,6 +10,10 @@ public class Calculator {
         return num1 - num2;
     }
 
+    public static double multiplicar(double num1, double num2) {
+        return num1 * num2;
+    }
+
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Digite el primer número: ");
@@ -21,6 +25,7 @@ public class Calculator {
             System.out.println("\nSelecciona una operación:");
             System.out.println("1. Sumar");
             System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
             System.out.print("Opción: ");
 
             int opcion = sc.nextInt();
@@ -32,6 +37,9 @@ public class Calculator {
                     break;
                 case 2:
                     resultado = restar(num1, num2);
+                    break;
+                case 3:
+                    resultado = multiplicar(num1, num2);
                     break;
                 default:
                     System.out.println("Opción inválida.");
