@@ -14,6 +14,10 @@ public class Calculator {
         return num1 * num2;
     }
 
+    public static double dividir(double num1, double num2) {
+        return num1 / num2; // ⚠ No se valida división por cero aún
+    }
+
     public static void main(String[] args) {
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Digite el primer número: ");
@@ -26,6 +30,7 @@ public class Calculator {
             System.out.println("1. Sumar");
             System.out.println("2. Restar");
             System.out.println("3. Multiplicar");
+            System.out.println("4. Dividir");
             System.out.print("Opción: ");
 
             int opcion = sc.nextInt();
@@ -40,6 +45,9 @@ public class Calculator {
                     break;
                 case 3:
                     resultado = multiplicar(num1, num2);
+                    break;
+                case 4:
+                    resultado = dividir(num1, num2);
                     break;
                 default:
                     System.out.println("Opción inválida.");
