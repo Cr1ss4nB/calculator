@@ -15,7 +15,11 @@ public class Calculator {
     }
 
     public static double dividir(double num1, double num2) {
-        return num1 / num2; // ⚠ No se valida división por cero aún
+        if (num2 != 0) {
+            return num1 / num2;
+        } else {
+            throw new ArithmeticException("No se puede dividir por cero."); //Ya se valida y ajá
+        }
     }
 
     public static void main(String[] args) {
@@ -47,7 +51,12 @@ public class Calculator {
                     resultado = multiplicar(num1, num2);
                     break;
                 case 4:
-                    resultado = dividir(num1, num2);
+                    try {
+                        resultado = dividir(num1, num2);
+                    } catch (ArithmeticException e) {
+                        System.out.println("Error: " + e.getMessage());
+                        return;
+                    }
                     break;
                 default:
                     System.out.println("Opción inválida.");
